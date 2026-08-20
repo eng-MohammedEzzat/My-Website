@@ -39,8 +39,9 @@ export default function Home() {
         <main>
           <Hero />
           <AboutSection />
-          <TrainingSection />
           <ProjectsSection />
+          <TrainingSection />
+
           <SkillsSection />
           <EducationSection />
           <ContactSection />

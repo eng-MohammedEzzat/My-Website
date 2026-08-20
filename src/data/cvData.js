@@ -81,6 +81,7 @@ export const cvData = {
       title: "Gaza Gate Platform MVP",
       category: "Live Production Project",
       location: "Live site: gazagate.store",
+      url: "https://gazagate.store",
       subtitle: "Full-Featured E-commerce Platform",
       summary: "Collaborated with a cross-functional team to build and ship a full-featured, live e-commerce platform.",
       techStack: ["React.js", "Express.js", "Docker", "Coolify", "VPS Cloud", "GitHub Actions"],

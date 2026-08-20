@@ -103,10 +103,21 @@ export default function ProjectModal({ project, onClose }) {
             )}
 
             {/* Footer Action */}
-            <div className="flex justify-center pt-8 border-t border-slate-100">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 pt-8 border-t border-slate-100">
+              {project.url && (
+                <a
+                  href={project.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full sm:w-auto px-10 py-4 rounded-full bg-orange-500 hover:bg-orange-600 text-white text-xs font-bold uppercase tracking-widest transition-colors duration-300 shadow-md flex items-center justify-center gap-2"
+                >
+                  Visit Website
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                </a>
+              )}
               <button
                 onClick={onClose}
-                className="w-full py-4 rounded-full bg-slate-900 hover:bg-orange-500 text-white text-xs font-bold uppercase tracking-widest transition-colors duration-300 shadow-md"
+                className={`w-full sm:w-auto px-10 py-4 rounded-full ${project.url ? 'bg-slate-100 hover:bg-slate-200 text-slate-700' : 'bg-slate-900 hover:bg-orange-500 text-white'} text-xs font-bold uppercase tracking-widest transition-colors duration-300 shadow-md`}
               >
                 Close Details
               </button>
