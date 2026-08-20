@@ -71,7 +71,7 @@ export const cvData = {
       ],
       hasCertificate: true,
       certificateTitle: "Data Structures & Algorithms Certificate",
-      certificateImage: "/certificates/gsg_certificate.pdf"
+      certificateImage: "/certificates/gsg_certificate.png"
     }
   ],
 
@@ -91,10 +91,10 @@ export const cvData = {
         "Conducted system testing to verify functionality, reliability, and performance prior to release."
       ],
       features: [
-        "Responsive frontend with Next.js",
-        "Robust backend API with NestJS",
+        "Responsive frontend with React.js",
+        "Robust backend API with Express.js",
         "Automated CI/CD with GitHub Actions",
-        "Containerized deployment on Hetzner Cloud VPS"
+        "Containerized deployment on  Cloud VPS"
       ]
     },
     {
