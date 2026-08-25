@@ -70,28 +70,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
           ))}
         </nav>
 
-        {/* Action Buttons */}
-        <div className="flex items-center gap-4">
-          {/* Theme Toggle - Hidden for light theme focus */}
-          {/* Download Resume / Print */}
-          <button
-            onClick={() => {
-              triggerConfetti();
-              window.print();
-            }}
-            className="hidden sm:flex items-center justify-center px-6 py-2.5 rounded-xl bg-slate-900 text-white font-black text-xs uppercase tracking-widest shadow-lg hover:bg-orange-500 transition-colors duration-300"
-          >
-            Download CV
-          </button>
-
-          {/* Mobile Menu Button */}
-          <button
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden p-2 rounded-xl bg-slate-100 text-slate-900 hover:bg-slate-200 transition-colors"
-          >
-            {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
-          </button>
-        </div>
       </div>
 
       {/* Mobile Drawer */}
@@ -114,16 +92,6 @@ export default function Navbar({ isDarkMode, setIsDarkMode }) {
                   {link.name}
                 </a>
               ))}
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  triggerConfetti();
-                  window.print();
-                }}
-                className="w-full mt-2 px-6 py-4 rounded-xl bg-slate-900 text-white font-black uppercase tracking-widest text-xs shadow-md hover:bg-orange-500 transition-colors"
-              >
-                Download CV
-              </button>
             </div>
           </motion.div>
         )}

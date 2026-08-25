@@ -29,13 +29,16 @@ export const metadata = {
   authors: [{ name: "Mohammed Al-Madhoun" }],
 };
 
+
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} ${playfair.variable} ${greatVibes.variable} h-full antialiased dark`}
     >
-      <body className="min-h-full flex flex-col bg-[#f09a1a] text-slate-100 font-sans">{children}</body>
+      <body className="min-h-full flex flex-col bg-[#f09a1a] text-slate-100 font-sans">
+        {children}
+      </body>
     </html>
   );
 }

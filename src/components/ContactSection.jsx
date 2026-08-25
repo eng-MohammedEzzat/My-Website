@@ -29,19 +29,41 @@ export default function ContactSection() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitError, setSubmitError] = useState(null);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
-    confetti({
-      particleCount: 100,
-      spread: 70,
-      origin: { y: 0.6 },
-      colors: ['#f97316', '#ea580c', '#c2410c']
-    });
-    setTimeout(() => {
-      setSubmitted(false);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-    }, 4000);
+    setIsSubmitting(true);
+    setSubmitError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to send message');
+      }
+
+      setSubmitted(true);
+      confetti({
+        particleCount: 100,
+        spread: 70,
+        origin: { y: 0.6 },
+        colors: ['#f97316', '#ea580c', '#c2410c']
+      });
+      setTimeout(() => {
+        setSubmitted(false);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+      }, 4000);
+    } catch (error) {
+      setSubmitError("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -226,11 +248,18 @@ export default function ContactSection() {
                   />
                 </div>
 
+                {submitError && (
+                  <div className="text-red-500 text-xs font-bold uppercase tracking-widest bg-red-50 p-4 rounded-xl border border-red-200">
+                    ⚠️ {submitError}
+                  </div>
+                )}
+                
                 <button
                   type="submit"
-                  className="w-full py-5 rounded-xl bg-slate-900 text-white font-black text-sm uppercase tracking-widest shadow-lg hover:bg-orange-500 transition-all duration-300"
+                  disabled={isSubmitting}
+                  className="w-full py-5 rounded-xl bg-slate-900 text-white font-black text-sm uppercase tracking-widest shadow-lg hover:bg-orange-500 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex justify-center items-center gap-2"
                 >
-                  Send Message
+                  {isSubmitting ? "Sending..." : "Send Message"}
                 </button>
               </form>
             )}
