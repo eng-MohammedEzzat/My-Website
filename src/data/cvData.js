@@ -32,6 +32,44 @@ export const cvData = {
   ],
 
   training: [
+        {
+      organization: "Anthropic Academy",
+      location: "Remote",
+      program: "Claude & AI Engineering Certification",
+      period: "Sep 2026",
+      description: "Completed comprehensive training across Anthropic's flagship curriculum, mastering AI frameworks, prompt engineering, agentic development workflows with Claude Code, and full-stack LLM integration with the Claude API.",
+      topics: [
+        "AI Fluency: Framework & Foundations",
+        "Claude Code 101 (Agentic CLI & Workflow)",
+        "Building with the Claude API & Tool Use",
+        "Prompt Design, Context Windows & Structured Output"
+      ],
+      outcomes: [
+        "Earned 3 verified certificates of completion from Anthropic",
+        "Mastered hands-on integration of Claude API into full-stack systems",
+        "Adopted advanced agentic coding practices using Claude Code 101"
+      ],
+      hasCertificate: true,
+      certificateTitle: "Anthropic Academy Certificates",
+      certificateImage: "https://res.cloudinary.com/docqumxby/image/upload/v1788437091/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2026-09-03_150436_ifzoxx.png",
+      certificates: [
+        {
+          title: "Claude with the Anthropic API",
+          course: "Building with the Claude API",
+          image: "https://res.cloudinary.com/docqumxby/image/upload/v1788437091/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2026-09-03_150436_ifzoxx.png"
+        },
+        {
+          title: "Claude Code 101",
+          course: "Claude Code 101",
+          image: "https://res.cloudinary.com/docqumxby/image/upload/v1788436347/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2026-09-03_145153_onjbvg.png"
+        },
+        {
+          title: "AI Fluency: Framework & Foundations",
+          course: "AI Fluency: Framework & Foundations",
+          image: "https://res.cloudinary.com/docqumxby/image/upload/v1788436398/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2026-09-03_145304_dhyacx.png"
+        }
+      ]
+    },
     {
       organization: "TAQAT",
       location: "Gaza City",
