@@ -2,11 +2,40 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import { ChevronLeft, ChevronRight, X, Award, CheckCircle2 } from "lucide-react";
 import { cvData } from "@/data/cvData";
 
 export default function TrainingSection() {
   const { training } = cvData;
   const [selectedCert, setSelectedCert] = useState(null);
+  const [activeCertIndex, setActiveCertIndex] = useState(0);
+
+  const handleOpenCert = (item, index = 0) => {
+    setSelectedCert(item);
+    setActiveCertIndex(index);
+  };
+
+  const currentCertList = selectedCert
+    ? selectedCert.certificates && selectedCert.certificates.length > 0
+      ? selectedCert.certificates
+      : selectedCert.certificateImage
+        ? [{ title: selectedCert.certificateTitle || "Certificate", image: selectedCert.certificateImage }]
+        : []
+    : [];
+
+  const currentCert = currentCertList[activeCertIndex] || currentCertList[0];
+
+  const handleNextCert = () => {
+    if (currentCertList.length > 1) {
+      setActiveCertIndex((prev) => (prev + 1) % currentCertList.length);
+    }
+  };
+
+  const handlePrevCert = () => {
+    if (currentCertList.length > 1) {
+      setActiveCertIndex((prev) => (prev - 1 + currentCertList.length) % currentCertList.length);
+    }
+  };
 
   return (
     <section id="training" className="py-24 relative bg-slate-50 border-t border-slate-200">
@@ -25,6 +54,7 @@ export default function TrainingSection() {
         {/* Training Timeline Card */}
         <div className="max-w-4xl mx-auto">
           {training.map((item, index) => (
+            const hasMultipleCerts = item.certificates && item.certificates.length > 1;
             <motion.div
               key={item.program}
               initial={{ opacity: 0, y: 30 }}
@@ -51,6 +81,22 @@ export default function TrainingSection() {
                     {item.program}
                   </p>
                 </div>
+                {hasMultipleCerts && (
+                      <div className="flex flex-wrap gap-2 mt-4">
+                        {item.certificates.map((cert, cIdx) => (
+                          <button
+                            key={cert.title}
+                            onClick={() => handleOpenCert(item, cIdx)}
+                            className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-orange-50/80 border border-orange-200 text-orange-800 text-xs font-bold hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-200 cursor-pointer shadow-sm"
+                            title={`View certificate: ${cert.title}`}
+                          >
+                            <Award className="w-3.5 h-3.5 text-orange-500 group-hover:text-white transition-colors" />
+                            <span>{cert.title}</span>
+                          </button>
+                        ))}
+                      </div>
+                    )}
+                  </div>
 
                 {/* Certificate Action Button */}
                 {item.hasCertificate && (
