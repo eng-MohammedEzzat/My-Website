@@ -9,7 +9,7 @@ export default function Hero() {
 
   return (
     <section className="relative w-full min-h-[100vh] md:h-[90vh] md:min-h-[700px] md:max-h-[900px] flex flex-col md:flex-row overflow-hidden bg-white">
-      
+
       {/* Mobile Nav Button (Absolute for Mobile) */}
       <div className="absolute top-6 right-6 z-50 md:hidden">
         <button
@@ -22,7 +22,7 @@ export default function Hero() {
 
       {/* LEFT / TOP PANEL - ORANGE */}
       <div className="w-full md:w-[55%] h-[60vh] md:h-full relative bg-gradient-to-br from-[#c2410c] to-[#9a3412] p-8 md:p-12 flex flex-col justify-between overflow-hidden">
-        
+
         {/* Logo (or Name) */}
         <div className="relative z-20 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
           <span className="font-signature text-white text-4xl sm:text-5xl drop-shadow-md">Mohammed</span>
@@ -61,7 +61,7 @@ export default function Hero() {
 
       {/* RIGHT / BOTTOM PANEL - WHITE */}
       <div className="w-full md:w-[45%] h-[40vh] md:h-full bg-white relative p-8 md:p-12 flex flex-col justify-end md:justify-between">
-        
+
         {/* Desktop Nav */}
         <div className="hidden md:flex justify-end items-center gap-8 relative z-30">
           <nav className="flex items-center gap-8">
@@ -91,7 +91,7 @@ export default function Hero() {
           </p>
           <div className="flex items-center gap-3">
             <div className="w-6 h-6 sm:w-8 sm:h-8 rounded-full overflow-hidden bg-slate-200">
-              <img src="/profile.jpg" alt="self" className="w-full h-full object-cover grayscale" />
+              <img src="https://res.cloudinary.com/docqumxby/image/upload/v1788433633/profile_lvqv0s.jpg" alt="self" className="w-full h-full object-cover grayscale" />
             </div>
             <div>
               <p className="text-sm sm:text-xl font-signature text-slate-900 leading-none">Mohammed</p>
@@ -110,7 +110,7 @@ export default function Hero() {
           className="h-full md:h-[95%] w-auto md:w-full relative flex items-end justify-end md:justify-center"
         >
           <img
-            src={personalInfo.image || "/profile.jpg"}
+            src={personalInfo.image || "https://res.cloudinary.com/docqumxby/image/upload/v1788433633/profile_lvqv0s.jpg"}
             alt="Mohammed"
             className="w-auto h-full object-contain object-bottom drop-shadow-[0_20px_50px_rgba(0,0,0,0.5)] max-w-[80vw]"
           />

@@ -10,7 +10,7 @@ export const cvData = {
     about: "Final-year Computer Systems Engineering student and Full-Stack Developer with real-world production experience across the Next.js, NestJS, Prisma, and PostgreSQL stack, including shipping a live e-commerce platform. Skilled in building responsive frontend interfaces, designing RESTful APIs, and managing relational databases. Hands-on experience implementing CI/CD pipelines with GitHub Actions and deploying containerized applications on Hetzner Cloud VPS using Docker and Coolify.",
     graduationDate: "Dec 2026",
     status: "Available for Opportunities",
-    image: "/profile.jpg"
+    image: "https://res.cloudinary.com/docqumxby/image/upload/v1788433633/profile_lvqv0s.jpg"
   },
 
   education: [
@@ -50,7 +50,7 @@ export const cvData = {
       ],
       hasCertificate: true,
       certificateTitle: "CodeMap 2026 Certificate",
-      certificateImage: "/certificates/taqat_certificate.png"
+      certificateImage: "https://res.cloudinary.com/docqumxby/image/upload/v1788433066/taqat_certificate_otqfb8.png"
     },
     {
       organization: "Gaza Sky Geeks",
@@ -71,7 +71,7 @@ export const cvData = {
       ],
       hasCertificate: true,
       certificateTitle: "Data Structures & Algorithms Certificate",
-      certificateImage: "/certificates/gsg_certificate.png"
+      certificateImage: "https://res.cloudinary.com/docqumxby/image/upload/v1788433438/gsg_certificate_osqwzk.png"
     }
   ],
 
