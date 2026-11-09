@@ -32,7 +32,27 @@ export const cvData = {
   ],
 
   training: [
-        {
+    {
+      organization: "ICPC Foundation",
+      location: "Palestine",
+      program: "2026 ICPC Palestinian Collegiate Programming Contest (PCPC)",
+      period: "Oct 2026",
+      description: "Competed as part of the Al-Azhar University - Gaza team in the Palestinian Collegiate Programming Contest, the national ICPC-affiliated contest bringing together university teams from across Palestine to solve algorithmic problems under strict time limits.",
+      topics: [
+        "Competitive Programming",
+        "Algorithmic Problem Solving",
+        "Data Structures & Algorithms",
+        "Team Collaboration Under Time Pressure"
+      ],
+      outcomes: [
+        "Earned an ICPC Certificate of Achievement (42nd place)",
+        "Represented Al-Azhar University - Gaza among universities across Palestine"
+      ],
+      hasCertificate: true,
+      certificateTitle: "ICPC Certificate of Achievement",
+      certificateImage: "https://res.cloudinary.com/docqumxby/image/upload/v1794225795/%D9%84%D9%82%D8%B7%D8%A9_%D8%B4%D8%A7%D8%B4%D8%A9_2026-11-09_140302_ugxqbb.png"
+    },
+    {
       organization: "Anthropic Academy",
       location: "Remote",
       program: "Claude & AI Engineering Certification",
