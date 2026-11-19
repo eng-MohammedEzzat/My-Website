@@ -7,8 +7,8 @@ export const cvData = {
     email: "moezzatma@gmail.com",
     linkedin: "https://linkedin.com/in/mohammed-e-elmadhoun/",
     github: "https://github.com",
-    about: "Final-year Computer Systems Engineering student and Full-Stack Developer with real-world production experience across the Next.js, NestJS, Prisma, and PostgreSQL stack, including shipping a live e-commerce platform. Skilled in building responsive frontend interfaces, designing RESTful APIs, and managing relational databases. Hands-on experience implementing CI/CD pipelines with GitHub Actions and deploying containerized applications on Hetzner Cloud VPS using Docker and Coolify.",
-    graduationDate: "Dec 2026",
+    about: "Final-year Computer Systems Engineering student and Full-Stack Developer with real-world production experience across the Next.js, Node.js, Express.js and mongoDB stack, including shipping a live e-commerce platform. Skilled in building responsive frontend interfaces, designing RESTful APIs, and managing MongoDB databases. Hands-on experience implementing CI/CD pipelines with GitHub Actions and deploying containerized applications on Cloud VPS using Docker and Coolify.",
+    graduationDate: "Feb 2027",
     status: "Available for Opportunities",
     image: "https://res.cloudinary.com/docqumxby/image/upload/v1788433633/profile_lvqv0s.jpg"
   },
@@ -18,7 +18,7 @@ export const cvData = {
       institution: "Al-Azhar University",
       location: "Gaza, Palestine",
       degree: "B.Sc. in Computer Systems Engineering",
-      graduationDate: "Expected Dec 2026",
+      graduationDate: "Expected Feb 2027",
       status: "Final Year Student",
       description: "GPA: 90%",
       highlights: [
@@ -162,16 +162,15 @@ export const cvData = {
       category: "Graduation Project (In Progress)",
       location: "Gaza, Palestine",
       subtitle: "Transportation Booking System",
-      summary: "Building a full-stack transportation booking system using NestJS and PostgreSQL.",
-      techStack: ["NestJS", "Prisma ORM", "PostgreSQL", "RESTful API"],
+      summary: "Building a full-stack transportation booking system using Express.js and mongoDB.",
+      techStack: ["Express.js", "mongoDB", "RESTful API"],
       details: [
-        "Building a full-stack transportation booking system using NestJS for backend development, with Prisma ORM and PostgreSQL for data modeling and persistence.",
-        "Designing and implementing RESTful APIs and a relational database schema to manage routes, bookings, and user accounts."
+        "Building a full-stack transportation booking system using Express.js for backend development, with mongoDB for data modeling and persistence.",
+        "Designing and implementing RESTful APIs and a MongoDB database schema to manage routes, bookings, and user accounts."
       ],
       features: [
         "RESTful APIs for user and booking management",
-        "Relational database schema with PostgreSQL",
-        "Data modeling and persistence via Prisma ORM"
+        "MongoDB database schema with mongoose",
       ]
     },
     {
