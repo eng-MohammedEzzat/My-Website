@@ -1,151 +1,89 @@
 "use client";
 
-import { useState } from "react";
 import { motion } from "framer-motion";
+import { Server, Sparkles } from "lucide-react";
 import { cvData } from "@/data/cvData";
 
-export default function SkillsSection() {
-  const { skills } = cvData;
-  const [activeTab, setActiveTab] = useState("all");
-  const [searchQuery, setSearchQuery] = useState("");
+const CATEGORY_ORDER = ["programming", "frontend", "backend", "database", "devops", "core"];
+const MIN_TILES_PER_LOOP = 10;
+const SECONDS_PER_TILE = 3.5;
 
-  const allTechSkills = [
-    ...skills.programming.map((s) => ({ ...s, group: "Languages" })),
-    ...skills.frontend.map((s) => ({ ...s, group: "Front-End" })),
-    ...skills.backend.map((s) => ({ ...s, group: "Back-End" })),
-    ...skills.database.map((s) => ({ ...s, group: "Database" })),
-    ...skills.devops.map((s) => ({ ...s, group: "DevOps & CI/CD" })),
-    ...skills.core.map((s) => ({ ...s, group: "Core Engineering" })),
-  ];
+const TECH_SKILLS = CATEGORY_ORDER.flatMap((id) => cvData.skills[id] ?? []);
+const SOFT_SKILLS = (cvData.skills.soft ?? []).map((name) => ({ name, icon: Sparkles }));
 
-  const filteredTech = allTechSkills.filter((item) => {
-    const matchesSearch = item.name.toLowerCase().includes(searchQuery.toLowerCase());
-    if (activeTab === "all") return matchesSearch;
-    if (activeTab === "programming") return matchesSearch && item.group === "Languages";
-    if (activeTab === "frontend") return matchesSearch && item.group === "Front-End";
-    if (activeTab === "backend") return matchesSearch && item.group === "Back-End";
-    if (activeTab === "database") return matchesSearch && item.group === "Database";
-    if (activeTab === "devops") return matchesSearch && item.group === "DevOps & CI/CD";
-    if (activeTab === "core") return matchesSearch && item.group === "Core Engineering";
-    return matchesSearch;
-  });
+function fillLoop(items) {
+  if (items.length === 0) return [];
+  const repeats = Math.ceil(MIN_TILES_PER_LOOP / items.length);
+  return Array.from({ length: repeats }, () => items).flat();
+}
 
-  const filteredSoft = skills.soft.filter((s) =>
-    s.toLowerCase().includes(searchQuery.toLowerCase())
+function LogoTile({ skill, hidden }) {
+  const FallbackIcon = skill.icon ?? Server;
+  return (
+    <li className="pr-4 shrink-0" aria-hidden={hidden || undefined}>
+      <div className="h-16 px-6 flex items-center gap-3 rounded-xl border border-white/5 bg-gradient-to-b from-[#0d1f36] to-[#081425] shadow-[inset_0_1px_0_rgba(255,255,255,0.06),0_10px_30px_-12px_rgba(0,0,0,0.8)] transition-all duration-300 hover:-translate-y-0.5 hover:border-sky-400/40 hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),0_12px_35px_-10px_rgba(14,165,233,0.55)]">
+        {skill.logo ? (
+          <img src={skill.logo} alt={hidden ? "" : `${skill.name} logo`} className="h-7 w-7 object-contain" loading="lazy" />
+        ) : (
+          <FallbackIcon className="h-6 w-6 text-sky-400" />
+        )}
+        <span className="text-sm font-semibold text-white/90 whitespace-nowrap">{skill.name}</span>
+      </div>
+    </li>
   );
+}
+
+function Marquee({ items, reverse = false, label }) {
+  const loop = fillLoop(items);
+  if (loop.length === 0) return null;
 
   return (
-    <section id="skills" className="py-24 relative bg-slate-50">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      className="marquee relative overflow-hidden [mask-image:linear-gradient(to_right,transparent,black_8%,black_92%,transparent)]"
+      aria-label={label}
+    >
+      <ul
+        className={`animate-marquee flex w-max ${reverse ? "[animation-direction:reverse]" : ""}`}
+        style={{ "--marquee-duration": `${loop.length * SECONDS_PER_TILE}s` }}
+      >
+        {loop.map((skill, idx) => (
+          <LogoTile key={`a-${idx}`} skill={skill} hidden={idx >= items.length} />
+        ))}
+        {loop.map((skill, idx) => (
+          <LogoTile key={`b-${idx}`} skill={skill} hidden />
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default function SkillsSection() {
+  return (
+    <section id="skills" className="py-24 relative bg-slate-50 overflow-hidden">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="text-center max-w-3xl mx-auto mb-16">
+        <div className="text-center max-w-3xl mx-auto mb-14">
           <h2 className="text-4xl sm:text-6xl font-serif text-slate-900 uppercase mb-6">
-            Technical <span className="text-orange-500">Arsenal</span>
+            Skills & <span className="text-sky-500">Tools</span>
           </h2>
           <p className="text-slate-600 font-bold leading-relaxed max-w-xl mx-auto uppercase tracking-widest text-xs">
-            Technical stack, algorithmic foundation, and interpersonal skills.
+            The languages, frameworks, and tools I build with every day.
           </p>
         </div>
 
-        {/* Filter Controls Bar */}
-        <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-16 max-w-5xl mx-auto bg-white p-4 rounded-3xl shadow-sm border border-slate-200">
-          {/* Tab Buttons */}
-          <div className="flex flex-wrap items-center justify-center gap-2 w-full md:w-auto">
-            {["all", "programming", "frontend", "backend", "database", "devops", "core"].map((tab) => {
-              const tabLabels = {
-                all: "All Skills",
-                programming: "Languages",
-                frontend: "Front-End",
-                backend: "Back-End",
-                database: "Database",
-                devops: "DevOps",
-                core: "Core"
-              };
-              return (
-                <button
-                  key={tab}
-                  onClick={() => setActiveTab(tab)}
-                  className={`px-5 py-2.5 rounded-full text-xs font-black uppercase tracking-widest transition-all ${activeTab === tab
-                      ? "bg-orange-500 text-white shadow-[0_8px_20px_rgba(249,115,22,0.3)]"
-                      : "bg-slate-50 text-slate-500 hover:bg-slate-100 hover:text-slate-900"
-                    }`}
-                >
-                  {tabLabels[tab]}
-                </button>
-              );
-            })}
-          </div>
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: "-60px" }}
+          transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+          className="relative overflow-hidden rounded-[2rem] bg-slate-300 py-10 flex flex-col gap-4 shadow-[0_30px_60px_-25px_rgba(2,6,23,0.6)]"
+        >
+          <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[700px] h-48 bg-sky-500/20 rounded-full blur-[100px] pointer-events-none" />
 
-          {/* Search Box */}
-          <div className="w-full md:w-64">
-            <input
-              type="text"
-              placeholder="SEARCH SKILL..."
-              value={searchQuery}
-              onChange={(e) => setSearchQuery(e.target.value)}
-              className="w-full px-5 py-3 rounded-full bg-slate-50 border border-slate-200 text-xs font-bold text-slate-900 uppercase placeholder-slate-400 focus:outline-none focus:border-orange-500 focus:ring-1 focus:ring-orange-500 transition-colors"
-            />
-          </div>
-        </div>
-
-        {/* Technical Skills Animated Bars Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-5xl mx-auto mb-20">
-          {filteredTech.map((skill, idx) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 15 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
-              className="bg-white p-6 rounded-[1.5rem] border border-slate-200 hover:shadow-lg hover:border-orange-200 transition-all duration-300"
-            >
-              <div className="flex items-center justify-between mb-4">
-                <div className="flex items-center gap-3">
-                  <span className="text-lg font-black text-slate-900 uppercase tracking-tight">{skill.name}</span>
-                  <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1 rounded-full bg-slate-100 text-slate-500">
-                    {skill.group}
-                  </span>
-                </div>
-                <span className="text-sm font-black text-orange-500">{skill.level}%</span>
-              </div>
-
-              {/* Progress Bar Container */}
-              <div className="w-full h-3 rounded-full bg-slate-100 overflow-hidden border border-slate-200">
-                <motion.div
-                  initial={{ width: 0 }}
-                  whileInView={{ width: `${skill.level}%` }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.2 }}
-                  className="h-full rounded-full bg-orange-500"
-                />
-              </div>
-            </motion.div>
-          ))}
-        </div>
-
-        {/* Soft Skills Badges Grid */}
-        {(activeTab === "all" || activeTab === "soft") && (
-          <div className="max-w-4xl mx-auto pt-10 border-t border-slate-200">
-            <h3 className="text-2xl font-black text-slate-900 mb-8 text-center uppercase tracking-tight">
-              Professional <span className="text-orange-500">Attributes</span>
-            </h3>
-            <div className="flex flex-wrap justify-center gap-4">
-              {filteredSoft.map((softSkill, idx) => (
-                <motion.div
-                  key={softSkill}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.3, delay: idx * 0.05 }}
-                  className="bg-white px-6 py-3.5 rounded-full text-sm font-black text-slate-700 uppercase tracking-widest border-2 border-slate-200 hover:border-orange-500 hover:text-orange-500 transition-colors duration-300 shadow-sm hover:shadow-md"
-                >
-                  {softSkill}
-                </motion.div>
-              ))}
-            </div>
-          </div>
-        )}
+          <Marquee items={TECH_SKILLS} label="Technical skills and tools" />
+          <Marquee items={SOFT_SKILLS} label="Professional attributes" reverse />
+        </motion.div>
 
       </div>
     </section>

@@ -10,9 +10,26 @@ import SkillsSection from "@/components/SkillsSection";
 import EducationSection from "@/components/EducationSection";
 import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
+import { scrollToHash } from "@/lib/smoothScroll";
 
 export default function Home() {
   const [isDarkMode, setIsDarkMode] = useState(true);
+
+  useEffect(() => {
+    const handleAnchorClick = (event) => {
+      if (event.defaultPrevented || event.button !== 0) return;
+      if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+
+      const link = event.target.closest('a[href^="#"]');
+      if (!link) return;
+
+      event.preventDefault();
+      scrollToHash(link.getAttribute("href"));
+    };
+
+    document.addEventListener("click", handleAnchorClick);
+    return () => document.removeEventListener("click", handleAnchorClick);
+  }, []);
 
   useEffect(() => {
     if (isDarkMode) {

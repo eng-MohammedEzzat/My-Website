@@ -14,10 +14,10 @@
     --border-color: rgba(0, 0, 0, 0.05);
     --text-primary: #0f172a;
     --text-secondary: #475569;
-    --accent-cyan: #f97316;
-    --accent-blue: #ea580c;
-    --accent-purple: #c2410c;
-    --accent-emerald: #9a3412;
+    --accent-cyan: #0ea5e9;
+    --accent-blue: #0284c7;
+    --accent-purple: #0369a1;
+    --accent-emerald: #075985;
   }
 
   .dark-mode {
@@ -35,6 +35,13 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 5rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
 }
 
 body {
@@ -77,8 +84,8 @@ body {
 }
 
 .glass-card-hover:hover {
-  border-color: rgba(249, 115, 22, 0.3);
-  box-shadow: 0 12px 40px -10px rgba(249, 115, 22, 0.15);
+  border-color: rgba(14, 165, 233, 0.3);
+  box-shadow: 0 12px 40px -10px rgba(14, 165, 233, 0.15);
   transform: translateY(-3px);
 }
 
@@ -102,6 +109,30 @@ body {
 
   50% {
     transform: translateY(-10px) rotate(2deg);
+  }
+}
+
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee var(--marquee-duration, 30s) linear infinite;
+}
+
+.marquee:hover .animate-marquee {
+  animation-play-state: paused;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-marquee {
+    animation: none;
   }
 }
 
@@ -142,7 +173,7 @@ body {
 }
 
 .gradient-text {
-  background: linear-gradient(135deg, #f97316 0%, #ea580c 50%, #c2410c 100%);
+  background: linear-gradient(135deg, #38bdf8 0%, #0ea5e9 50%, #0284c7 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -150,7 +181,7 @@ body {
 .gradient-border {
   position: relative;
   border-radius: 9999px;
-  background: linear-gradient(135deg, #f97316, #ea580c, #c2410c);
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9, #0284c7);
   padding: 3px;
 }
 

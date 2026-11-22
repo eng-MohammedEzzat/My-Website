@@ -44,7 +44,7 @@ export default function TrainingSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl sm:text-6xl font-serif text-slate-900 uppercase mb-6">
-            Certifications & <span className="text-orange-500">Training</span>
+            Certifications & <span className="text-sky-500">Training</span>
           </h2>
           <p className="text-slate-600 font-bold leading-relaxed max-w-xl mx-auto uppercase tracking-widest text-xs">
             Rigorous hands-on algorithmic and data structures training under Gaza Sky Geeks.
@@ -63,10 +63,10 @@ export default function TrainingSection() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
-                className="bg-white p-10 rounded-[2rem] border border-slate-200 shadow-sm relative overflow-hidden hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1 transition-all duration-300 mb-10"
+                className="bg-white p-10 rounded-[2rem] border border-slate-200 shadow-sm relative overflow-hidden hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-1 transition-all duration-300 mb-10"
               >
                 {/* Top Accent Bar */}
-                <div className={`absolute top-0 inset-x-0 h-2 ${index === 0 ? "bg-orange-500" : "bg-slate-900"}`} />
+                <div className={`absolute top-0 inset-x-0 h-2 ${index === 0 ? "bg-sky-500" : "bg-slate-900"}`} />
 
                 <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8 mt-2">
                   <div className="flex-1">
@@ -78,13 +78,13 @@ export default function TrainingSection() {
                         {item.period}
                       </span>
                       {hasMultipleCerts && (
-                        <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full bg-orange-100 text-orange-600">
+                        <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full bg-sky-100 text-sky-600">
                           {item.certificates.length} Certificates
                         </span>
                       )}
                     </div>
                     <h3 className="text-3xl font-black text-slate-900 tracking-tight mb-2">{item.organization}</h3>
-                    <p className="text-sm font-black text-orange-500 uppercase tracking-widest">
+                    <p className="text-sm font-black text-sky-500 uppercase tracking-widest">
                       {item.program}
                     </p>
 
@@ -95,10 +95,10 @@ export default function TrainingSection() {
                           <button
                             key={cert.title}
                             onClick={() => handleOpenCert(item, cIdx)}
-                            className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-orange-50/80 border border-orange-200 text-orange-800 text-xs font-bold hover:bg-orange-500 hover:text-white hover:border-orange-500 transition-all duration-200 cursor-pointer shadow-sm"
+                            className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-sky-50/80 border border-sky-200 text-sky-800 text-xs font-bold hover:bg-sky-500 hover:text-white hover:border-sky-500 transition-all duration-200 cursor-pointer shadow-sm"
                             title={`View certificate: ${cert.title}`}
                           >
-                            <Award className="w-3.5 h-3.5 text-orange-500 group-hover:text-white transition-colors" />
+                            <Award className="w-3.5 h-3.5 text-sky-500 group-hover:text-white transition-colors" />
                             <span>{cert.title}</span>
                           </button>
                         ))}
@@ -110,7 +110,7 @@ export default function TrainingSection() {
                   {item.hasCertificate && (
                     <button
                       onClick={() => handleOpenCert(item, 0)}
-                      className="px-6 py-3 rounded-xl bg-slate-900 text-white text-xs font-black uppercase tracking-widest shadow-md hover:bg-orange-500 transition-colors duration-300 self-start md:self-auto shrink-0 flex items-center gap-2 cursor-pointer"
+                      className="px-6 py-3 rounded-xl bg-slate-900 text-white text-xs font-black uppercase tracking-widest shadow-md hover:bg-sky-500 transition-colors duration-300 self-start md:self-auto shrink-0 flex items-center gap-2 cursor-pointer"
                     >
                       <Award className="w-4 h-4" />
                       <span>{hasMultipleCerts ? `View Certificates (${item.certificates.length})` : "View Certificate"}</span>
@@ -133,7 +133,7 @@ export default function TrainingSection() {
                         key={topic}
                         className="bg-slate-50 p-4 rounded-xl text-sm font-bold text-slate-700 border border-slate-200 uppercase tracking-wider flex items-center gap-2.5"
                       >
-                        <CheckCircle2 className="w-4 h-4 text-orange-500 shrink-0" />
+                        <CheckCircle2 className="w-4 h-4 text-sky-500 shrink-0" />
                         <span>{topic}</span>
                       </div>
                     ))}
@@ -148,7 +148,7 @@ export default function TrainingSection() {
                   <div className="space-y-4">
                     {item.outcomes.map((outcome) => (
                       <div key={outcome} className="flex items-start gap-4 text-sm font-bold text-slate-700">
-                        <div className="w-2 h-2 rounded-full bg-orange-500 mt-1.5 shrink-0" />
+                        <div className="w-2 h-2 rounded-full bg-sky-500 mt-1.5 shrink-0" />
                         <span>{outcome}</span>
                       </div>
                     ))}
@@ -181,7 +181,7 @@ export default function TrainingSection() {
                 <div className="flex items-start justify-between gap-4 pb-4 border-b border-slate-100 mb-4">
                   <div>
                     <div className="flex items-center gap-2 mb-1">
-                      <span className="text-[10px] font-black uppercase tracking-widest text-orange-600 bg-orange-50 px-2.5 py-0.5 rounded-full">
+                      <span className="text-[10px] font-black uppercase tracking-widest text-sky-600 bg-sky-50 px-2.5 py-0.5 rounded-full">
                         {selectedCert.organization}
                       </span>
                       {currentCertList.length > 1 && (
@@ -216,7 +216,7 @@ export default function TrainingSection() {
                             : "bg-slate-100 text-slate-600 hover:bg-slate-200"
                           }`}
                       >
-                        <Award className={`w-3.5 h-3.5 ${activeCertIndex === idx ? "text-orange-400" : "text-slate-400"}`} />
+                        <Award className={`w-3.5 h-3.5 ${activeCertIndex === idx ? "text-sky-400" : "text-slate-400"}`} />
                         <span>{cert.course || cert.title}</span>
                       </button>
                     ))}
@@ -271,7 +271,7 @@ export default function TrainingSection() {
                 <div className="flex justify-center">
                   <button
                     onClick={() => setSelectedCert(null)}
-                    className="w-full py-4 rounded-xl bg-slate-900 text-white text-sm font-black uppercase tracking-widest hover:bg-orange-500 transition-colors"
+                    className="w-full py-4 rounded-xl bg-slate-900 text-white text-sm font-black uppercase tracking-widest hover:bg-sky-500 transition-colors"
                   >
                     Close
                   </button>

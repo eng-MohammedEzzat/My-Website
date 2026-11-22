@@ -13,7 +13,7 @@ export default function EducationSection() {
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-20">
           <h2 className="text-4xl sm:text-6xl font-serif text-slate-900 uppercase mb-6">
-            Academic <span className="text-orange-500">Journey</span>
+            Academic <span className="text-sky-500">Journey</span>
           </h2>
           <p className="text-slate-600 text-xs font-bold leading-relaxed max-w-xl mx-auto uppercase tracking-widest">
             Academic background in Computer Systems Engineering.
@@ -29,15 +29,15 @@ export default function EducationSection() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6 }}
-              className="bg-slate-50 p-10 rounded-[2rem] border border-slate-200 hover:shadow-xl hover:shadow-orange-500/10 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
+              className="bg-slate-50 p-10 rounded-[2rem] border border-slate-200 hover:shadow-xl hover:shadow-sky-500/10 hover:-translate-y-1 transition-all duration-300 relative overflow-hidden"
             >
               {/* Top Accent Bar */}
-              <div className="absolute top-0 inset-x-0 h-2 bg-orange-500" />
+              <div className="absolute top-0 inset-x-0 h-2 bg-sky-500" />
 
               <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-6 mb-8 mt-2">
                 <div>
                   <div className="flex items-center gap-3 mb-4">
-                    <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full bg-orange-100 text-orange-600">
+                    <span className="text-[10px] font-black uppercase tracking-widest px-3 py-1.5 rounded-full bg-sky-100 text-sky-600">
                       {edu.status}
                     </span>
                     <span className="text-xs font-bold text-slate-400 uppercase tracking-wider">
@@ -45,7 +45,7 @@ export default function EducationSection() {
                     </span>
                   </div>
                   <h3 className="text-3xl font-black text-slate-900 tracking-tight mb-2">{edu.institution}</h3>
-                  <p className="text-sm font-black text-orange-500 uppercase tracking-widest">
+                  <p className="text-sm font-black text-sky-500 uppercase tracking-widest">
                     {edu.degree}
                   </p>
                 </div>

@@ -6,7 +6,7 @@ export const cvData = {
     phone: "+970 59 814 2910",
     email: "moezzatma@gmail.com",
     linkedin: "https://linkedin.com/in/mohammed-e-elmadhoun/",
-    github: "https://github.com",
+    github: "https://github.com/eng-MohammedEzzat",
     about: "Final-year Computer Systems Engineering student and Full-Stack Developer with real-world production experience across the Next.js, Node.js, Express.js and mongoDB stack, including shipping a live e-commerce platform. Skilled in building responsive frontend interfaces, designing RESTful APIs, and managing MongoDB databases. Hands-on experience implementing CI/CD pipelines with GitHub Actions and deploying containerized applications on Cloud VPS using Docker and Coolify.",
     graduationDate: "Feb 2027",
     status: "Available for Opportunities",
@@ -136,101 +136,65 @@ export const cvData = {
   projects: [
     {
       id: "gaza-gate",
-      title: "Gaza Gate Platform MVP",
+      title: "Gaza Gate Platform",
       category: "Live Production Project",
-      location: "Live site: gazagate.store",
       url: "https://gazagate.store",
+      logo: "https://res.cloudinary.com/docqumxby/image/upload/v1795338226/brand_myqrzm.png",
       subtitle: "Full-Featured E-commerce Platform",
-      summary: "Collaborated with a cross-functional team to build and ship a full-featured, live e-commerce platform.",
-      techStack: ["React.js", "Express.js", "Docker", "Coolify", "VPS Cloud", "GitHub Actions"],
-      details: [
-        "Collaborated with a cross-functional team to build and ship a full-featured, live e-commerce platform, developing both frontend (React.js) and backend (Express.js) components.",
-        "Implemented a CI/CD pipeline using GitHub Actions to automate build, testing, and deployment processes.",
-        "Deployed and managed the application on a VPS Cloud using Docker containers orchestrated with Coolify.",
-        "Conducted system testing to verify functionality, reliability, and performance prior to release."
-      ],
+      summary: "Collaborated with a cross-functional team to build and ship a full-featured, live e-commerce platform, working on the Backend and devops.",
+      techStack: [ "Express.js","MySQL", "Docker", "RESTful API" ],
       features: [
-        "Responsive frontend with React.js",
-        "Robust backend API with Express.js",
-        "Automated CI/CD with GitHub Actions",
-        "Containerized deployment on  Cloud VPS"
+        "Live online store in production",
+        "Automated testing & deployment",
+        "Tested for reliability before release"
       ]
     },
     {
       id: "rukba-app",
       title: "Rukba Application",
       category: "Graduation Project (In Progress)",
-      location: "Gaza, Palestine",
+      logo: "https://res.cloudinary.com/docqumxby/image/upload/v1795338135/screen_pvyrx2.png",
       subtitle: "Transportation Booking System",
-      summary: "Building a full-stack transportation booking system using Express.js and mongoDB.",
+      summary: "Building a System Design and a Backend transportation booking system that lets users find routes and book trips.",
       techStack: ["Express.js", "mongoDB", "RESTful API"],
-      details: [
-        "Building a full-stack transportation booking system using Express.js for backend development, with mongoDB for data modeling and persistence.",
-        "Designing and implementing RESTful APIs and a MongoDB database schema to manage routes, bookings, and user accounts."
-      ],
       features: [
-        "RESTful APIs for user and booking management",
-        "MongoDB database schema with mongoose",
+        "Route browsing & trip booking",
+        "User accounts & booking history"
       ]
     },
     {
       id: "nextjs-portfolio",
       title: "Next.js Web Projects",
       category: "Personal Projects",
-      location: "Remote",
+      logo: "https://res.cloudinary.com/docqumxby/image/upload/v1795338541/icon_m9pksd.png",
       subtitle: "Personal Portfolio & Presentation Website",
       summary: "Designed and developed a personal portfolio and presentation website using Next.js.",
-      techStack: ["Next.js", "React.js", "Responsive UI", "CSS3"],
-      details: [
-        "Designed and developed a personal portfolio and presentation website using Next.js with a component-based, responsive UI."
-      ],
+      techStack: [ "Next.js", "Tailwind CSS", "TypeScript"],
       features: [
-        "Component-based architecture",
-        "Responsive User Interface",
-        "Fast performance and optimized loading"
+        "Responsive on every screen size",
+        "Fast, optimized loading"
       ]
     }
   ],
 
   skills: {
     programming: [
-      { name: "JavaScript (ES6+)", level: 90, category: "Languages" },
-      { name: "Python", level: 85, category: "Languages" },
-      { name: "Java", level: 80, category: "Languages" }
+      { name: "JavaScript (ES6+)", level: 90, category: "Languages", logo: "https://cdn.simpleicons.org/javascript" }
     ],
     frontend: [
-      { name: "Next.js", level: 90, category: "Front-End" },
-      { name: "React.js", level: 85, category: "Front-End" },
-      { name: "HTML5 / CSS3", level: 88, category: "Front-End" },
-      { name: "Responsive UI Design", level: 90, category: "Front-End" }
+      { name: "Next.js", level: 90, category: "Front-End", logo: "https://cdn.simpleicons.org/nextdotjs/white" }
     ],
     backend: [
-      { name: "NestJS", level: 85, category: "Back-End" },
-      { name: "Node.js", level: 80, category: "Back-End" },
+      { name: "ExpressJS", level: 85, category: "Back-End", logo: "https://cdn.simpleicons.org/express/white" },
+      { name: "Node.js", level: 80, category: "Back-End", logo: "https://cdn.simpleicons.org/nodedotjs" },
       { name: "RESTful API Design", level: 90, category: "Back-End" }
     ],
     database: [
-      { name: "PostgreSQL", level: 85, category: "Database" },
-      { name: "Prisma ORM", level: 88, category: "Database" },
-      { name: "Relational DB Design", level: 85, category: "Database" }
+      { name: "MongoDB", level: 85, category: "Database", logo: "https://cdn.simpleicons.org/mongodb" },
+      { name: "MySQL", level: 88, category: "Database", logo: "https://cdn.simpleicons.org/mysql/7cc4f0" }
     ],
     devops: [
-      { name: "Docker", level: 80, category: "DevOps & CI/CD" },
-      { name: "GitHub Actions", level: 85, category: "DevOps & CI/CD" },
-      { name: "Coolify & Hetzner", level: 80, category: "DevOps & CI/CD" },
-      { name: "Git / GitHub", level: 90, category: "DevOps & CI/CD" }
-    ],
-    core: [
-      { name: "Object-Oriented Programming", level: 88, category: "Core Engineering" },
-      { name: "Data Structures & Algorithms", level: 85, category: "Core Engineering" }
-    ],
-    soft: [
-      "Self-Learner",
-      "Teamwork & Collaboration",
-      "Problem Solving",
-      "Time Management",
-      "Adaptability",
-      "Communication"
+      { name: "Docker", level: 80, category: "DevOps & CI/CD", logo: "https://cdn.simpleicons.org/docker" }
     ]
   }
 };

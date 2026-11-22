@@ -20,8 +20,8 @@ export default function Hero() {
         </button>
       </div>
 
-      {/* LEFT / TOP PANEL - ORANGE */}
-      <div className="w-full md:w-[55%] h-[60vh] md:h-full relative bg-gradient-to-br from-[#c2410c] to-[#9a3412] p-8 md:p-12 flex flex-col justify-between overflow-hidden">
+      {/* LEFT / TOP PANEL - BLUE */}
+      <div className="w-full md:w-[55%] h-[60vh] md:h-full relative bg-gradient-to-br from-[#38bdf8] to-[#0369a1] p-8 md:p-12 flex flex-col justify-between overflow-hidden">
 
         {/* Logo (or Name) */}
         <div className="relative z-20 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-4">
@@ -47,7 +47,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="mt-6 sm:mt-10 inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-3.5 bg-white rounded-full text-[#9a3412] font-bold text-xs sm:text-sm shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] hover:scale-105 transition-all duration-300"
+              className="mt-6 sm:mt-10 inline-flex items-center gap-3 px-6 sm:px-8 py-3 sm:py-3.5 bg-white rounded-full text-[#0369a1] font-bold text-xs sm:text-sm shadow-[0_0_40px_rgba(255,255,255,0.4)] hover:shadow-[0_0_60px_rgba(255,255,255,0.6)] hover:scale-105 transition-all duration-300"
             >
               VIEW WORK
               <ArrowUpRight className="w-4 h-4" />
@@ -56,7 +56,7 @@ export default function Hero() {
         </div>
 
         {/* Glowing Background FX */}
-        <div className="absolute top-1/2 left-[80%] -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-orange-500/40 rounded-full blur-[80px] md:blur-[100px] pointer-events-none" />
+        <div className="absolute top-1/2 left-[80%] -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] md:w-[800px] md:h-[800px] bg-sky-500/40 rounded-full blur-[80px] md:blur-[100px] pointer-events-none" />
       </div>
 
       {/* RIGHT / BOTTOM PANEL - WHITE */}
@@ -65,10 +65,10 @@ export default function Hero() {
         {/* Desktop Nav */}
         <div className="hidden md:flex justify-end items-center gap-8 relative z-30">
           <nav className="flex items-center gap-8">
-            <a href="#projects" className="text-xs font-bold text-slate-900 tracking-wider hover:text-[#9a3412] transition-colors">WORK</a>
-            <a href="#about" className="text-xs font-bold text-slate-900 tracking-wider hover:text-[#9a3412] transition-colors">ABOUT</a>
-            <a href="#skills" className="text-xs font-bold text-slate-900 tracking-wider hover:text-[#9a3412] transition-colors">SKILLS</a>
-            <a href="#contact" className="text-xs font-bold text-slate-900 tracking-wider hover:text-[#9a3412] transition-colors">CONTACT</a>
+            <a href="#projects" className="text-xs font-bold text-slate-900 tracking-wider hover:text-[#0369a1] transition-colors">WORK</a>
+            <a href="#about" className="text-xs font-bold text-slate-900 tracking-wider hover:text-[#0369a1] transition-colors">ABOUT</a>
+            <a href="#skills" className="text-xs font-bold text-slate-900 tracking-wider hover:text-[#0369a1] transition-colors">SKILLS</a>
+            <a href="#contact" className="text-xs font-bold text-slate-900 tracking-wider hover:text-[#0369a1] transition-colors">CONTACT</a>
           </nav>
           <button
             className="w-10 h-10 rounded-full border border-slate-200 flex items-center justify-center hover:bg-slate-50 transition-colors"
@@ -85,7 +85,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
           className="relative z-30 bg-slate-50 p-4 sm:p-6 rounded-2xl sm:rounded-3xl w-full max-w-[280px] sm:max-w-sm self-end shadow-sm border border-slate-100 mt-auto md:mt-0 mb-4 md:mb-0"
         >
-          <div className="text-orange-500 font-serif text-3xl sm:text-4xl leading-none h-4 sm:h-6 mb-2">"</div>
+          <div className="text-sky-500 font-serif text-3xl sm:text-4xl leading-none h-4 sm:h-6 mb-2">"</div>
           <p className="text-slate-700 text-[10px] sm:text-xs font-medium leading-relaxed mb-4 sm:mb-6">
             Final-year Computer Systems Engineering student and Full-Stack Developer with real-world production experience.
           </p>
